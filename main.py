@@ -9,7 +9,11 @@ from camera_cal import camera_calibration
 
 #capture_image()
 #read_image()
+<<<<<<< Updated upstream
 camera_calibration()
+=======
+#camera_calibration()
+>>>>>>> Stashed changes
 #capture_video()
 #play_video()
 
