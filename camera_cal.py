@@ -13,8 +13,8 @@ def camera_calibration():
     # Arrays to store object points and image points from all the images.
     objpoints = []  # 3d point in real world space
     imgpoints = []  # 2d points in image plane.
-    #images = glob.glob('calib_radial.jpg')
-    images = glob.glob('grid.png')
+    images = glob.glob('calib_radial.jpg')
+    #images = glob.glob('grid.png')
 
     for fname in images:
         print("Entrei no for")
