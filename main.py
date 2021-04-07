@@ -50,11 +50,11 @@ cv.destroyAllWindows()
 
     #ret,cal1 = cv.threshold(img,i1,i2,cv.THRESH_BINARY)
     #ret,cal2 = cv.threshold(img,i1,i2,cv.THRESH_TOZERO)
-    #cv.imshow ("image_cal_1", cal1 )
-    #cv.imshow ("image_cal 2", cal2 )
+    #cv.imshow ("Image Calibration 1", cal1 )
+    #cv.imshow ("Image Calibration 2", cal2 )
     #if cv.waitKey(30) & 0xFF == ord('s'):                   #Save images
-        #cv.imwrite('calibrated_1.png',calibration1)         #when 's' is pressed
-        #cv.imwrite('calibrated_2.png',calibration2)
+        #cv.imwrite('image_cal_1.png',calibration1)         #when 's' is pressed
+        #cv.imwrite('image_cal_1.png',calibration2)
 
 #cv.destroyAllWindows()
 
