@@ -34,7 +34,7 @@ def save():
     cap = cv2.VideoCapture(0)       #chose pc camera
 
     fourcc = cv2.VideoWriter_fourcc (*'XVID')
-    output = cv2.VideoWriter ('./video_compressed.avi',fourcc,20.0, (640,480))
+    output = cv2.VideoWriter ('./video_test.avi',fourcc,20.0, (640,480))
 
     while(True):
         ret, frame = cap.read()
