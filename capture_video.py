@@ -1,4 +1,4 @@
-#programa que captura o vídeo e  gaurda o vídeo e 3 imagens: normal, gray e hsv
+#programa que captura o vídeo e  guarda o vídeo e 3 imagens: normal, gray e hsv
 
 def acquire():
     import cv2
