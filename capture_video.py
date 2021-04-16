@@ -41,7 +41,7 @@ def save():
         if ret == True:
                 output.write(frame)
                 cv2.imshow('video',frame)
-                if cv2.waitKey(20) & 0xFF == ord('q'):          # stop capure
+                if cv2.waitKey(20) & 0xFF == ord('q'):          # stop capture
                     break
 
     cap.release()
