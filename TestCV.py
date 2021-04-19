@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 # mouse callback function
 def printScreen(count,frame):
-    FN="Photo1"+str(count)+".jpg"
+    FN="Photo"+str(count)+".jpg"
     cv2.imwrite(FN, frame)
     print("It works")
 cv2.namedWindow("Cam-Test")
