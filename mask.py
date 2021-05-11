@@ -18,8 +18,9 @@ image = cv2.imread(cv2.samples.findFile("legos4.png"))
 
 # Reduce the image
 height, width = image.shape[:2]
-size = (int(width * 0.4), int(height * 0.15))  # bgr
+size = (int(width * 0.2), int(height * 0.20))  # bgr
 image = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
+
 
 # Open file
 nome_arquivo = input('Nome do ficheiro:')
@@ -54,10 +55,18 @@ if(teste in cores):
     mask = cv2.inRange(hsv, lower, upper)
     result = cv2.bitwise_and(image, image, mask=mask)
 
+    ret, thresh = cv2.threshold(mask, 127, 255, 0)
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
     while (1):
 
+        for contour in contours:
+            approx = cv2.approxPolyDP(contour, 0.01 * cv2.arcLength(contour, True), True)
+            cv2.drawContours(image, [contour], 0, (0, 0, 255), 2)
+
         # Display result image
-        cv2.imshow('image', result)
+        cv2.imshow('image', image)
         k = cv2.waitKey(10) & 0xFF
         if k == ord('q'):
             break

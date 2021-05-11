@@ -31,7 +31,7 @@ def nothing(x):
     pass
 
 # Load image
-image = cv2.imread(cv2.samples.findFile("legos3.png"))
+image = cv2.imread(cv2.samples.findFile("legos4.png"))
 
 # Mouse right button action
 def getposHsv_right(event, x, y, flags, param):

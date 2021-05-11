@@ -6,7 +6,7 @@ def mouse_click():
     init = [0,0,0]
 
     # Load image
-    img = cv2.imread(cv2.samples.findFile("legos3.png"))
+    img = cv2.imread(cv2.samples.findFile("legos4.png"))
 
     # Reduce the image
     height, width = img.shape[:2]
