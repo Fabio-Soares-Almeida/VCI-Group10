@@ -18,6 +18,16 @@ import cv2
 import numpy as np
 import ast
 from mouse import mouse_click
+from time import sleep
+from picamera import PiCamera, Color
+
+#capture_image()
+camera= PiCamera()
+camera.resolution = (2000, 1944)
+camera.start_preview()
+sleep(2)
+camera.capture('/home/pi/Desktop/legos.png')
+camera.stop_preview()
 
 # Variables
 global init
@@ -31,7 +41,8 @@ def nothing(x):
     pass
 
 # Load image
-image = cv2.imread(cv2.samples.findFile("legos4.png"))
+image = cv2.imread(cv2.samples.findFile("legos.png"))
+
 
 # Mouse right button action
 def getposHsv_right(event, x, y, flags, param):
@@ -65,7 +76,7 @@ def getposHsv_right(event, x, y, flags, param):
 
 # Reduce the image
 height, width = image.shape[:2]
-size = (int(width * 0.4), int(height * 0.15))  # bgr
+size = (int(width * 0.5), int(height * 0.3))  # bgr
 image = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
 
 # Create a window
@@ -81,12 +92,12 @@ cv2.createTrackbar('VMax', 'image', 0, 255, nothing)
 
 
 # Initialize HSV min/max values with the returned by the mouse_click function
-hMin = init_val[0]-10
-sMin = init_val[1]-5
-vMin = init_val[2]-5
-hMax = init_val[0]+10
-sMax = init_val[1]+5
-vMax = init_val[2]+5
+hMin = init_val[0]-5
+sMin = init_val[1]-1
+vMin = init_val[2]-1
+hMax = init_val[0]+5
+sMax = init_val[1]+1
+vMax = init_val[2]+1
 
 
 while(1):

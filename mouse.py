@@ -6,11 +6,12 @@ def mouse_click():
     init = [0,0,0]
 
     # Load image
-    img = cv2.imread(cv2.samples.findFile("legos4.png"))
+    img = cv2.imread(cv2.samples.findFile("legos.png"))
+
 
     # Reduce the image
     height, width = img.shape[:2]
-    size = (int(width * 0.4), int(height * 0.15))  # bgr
+    size = (int(width * 0.5), int(height * 0.5))  # bgr
     img = cv2.resize(img, size, interpolation=cv2.INTER_AREA)
 
     # Convert BGR to HSV
